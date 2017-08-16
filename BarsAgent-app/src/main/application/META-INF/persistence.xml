@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="discountPU" transaction-type="JTA">
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <jta-data-source>/jdbc/discountDS</jta-data-source>
+
+
+        <class>ru.rbt.discount.jpa.sys.Config</class>
+
+        <class>ru.rbt.discount.jpa.audit.Journal</class>
+
+        <class>ru.rbt.discount.jpa.wrk.WrkAudit</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkOperday</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkSchedule</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkState</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkLock</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkHistory</class>
+        <class>ru.rbt.discount.jpa.wrk.WrkLoad</class>
+
+        <class>ru.rbt.discount.jpa.job.SchedulingTask</class>
+        <class>ru.rbt.discount.jpa.job.ProcessJournal</class>
+        <class>ru.rbt.discount.jpa.job.Plan</class>
+        <class>ru.rbt.discount.jpa.job.Execution</class>
+
+        <class>ru.rbt.discount.jpa.event.DiscountEvent</class>
+
+        <class>ru.rbt.discount.jpa.security.Perm</class>
+        <class>ru.rbt.discount.jpa.security.Role</class>
+        <class>ru.rbt.discount.jpa.security.User</class>
+        <class>ru.rbt.discount.jpa.security.Employee</class>
+        <class>ru.rbt.discount.jpa.security.Act</class>
+        <class>ru.rbt.discount.jpa.security.Group</class>
+
+        <class>ru.rbt.discount.jpa.ui.Menu</class>
+
+        <class>ru.rbt.discount.jpa.dic.Branch</class>
+        <class>ru.rbt.discount.jpa.dic.BranchDwh</class>
+        <class>ru.rbt.discount.jpa.dic.Calendar</class>
+        <class>ru.rbt.discount.jpa.dic.Corridor</class>
+        <class>ru.rbt.discount.jpa.dic.Currency</class>
+        <class>ru.rbt.discount.jpa.dic.Customer</class>
+        <class>ru.rbt.discount.jpa.dic.EventType</class>
+        <class>ru.rbt.discount.jpa.dic.ProductAcctype</class>
+        <class>ru.rbt.discount.jpa.dic.ProductMd</class>
+        <class>ru.rbt.discount.jpa.dic.Rate</class>
+        <class>ru.rbt.discount.jpa.dic.ScheduleType</class>
+
+        <class>ru.rbt.discount.jpa.src.Account</class>
+        <class>ru.rbt.discount.jpa.src.Balance</class>
+        <class>ru.rbt.discount.jpa.src.Deal</class>
+        <class>ru.rbt.discount.jpa.src.Facility</class>
+        <class>ru.rbt.discount.jpa.src.Flow</class>
+        <class>ru.rbt.discount.jpa.src.Overdue</class>
+        <class>ru.rbt.discount.jpa.src.Schedule</class>
+
+        <class>ru.rbt.discount.jpa.res.ResEps</class>
+        <class>ru.rbt.discount.jpa.res.OutLog</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="eclipselink.target-database" value="Oracle"/>
+            <property name="eclipselink.target-server" value="WebLogic"/>
+            <property name="eclipselink.logging.logger" value="ServerLogger"/>
+            <property name="eclipselink.logging.session" value="true"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
+            <property name="eclipselink.jdbc.property.connection.transactionIsolation" value="2"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+

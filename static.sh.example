@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Maven home folder
+MAVEN_HOME=~/apache-maven-3.3.9
+
+# WebLogic 12.2.1.2 auto deployment folder
+WLS_AUTODEPLOY=/c/wls/user_projects/domains/base_domain/autodeploy/
+
+# Available profiles total, total-gwt, total-prime, static
+BUILD_PROFILE=static
+
+${MAVEN_HOME}/bin/mvn clean install -Dmaven.test.skip=true -T6 -P${BUILD_PROFILE}

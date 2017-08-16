@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>BarsAgent-parent</artifactId>
+        <groupId>ru.rbt.BarsAgent</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>BarsAgent-app</artifactId>
+    <packaging>ear</packaging>
+    <name>BarsAgent Application Module</name>
+
+    <profiles>
+        <profile>
+            <id>total</id>
+
+            <dependencies>
+
+
+                <dependency>
+                    <groupId>ru.rbt.BarsAgent</groupId>
+                    <artifactId>BarsAgent-common</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>jar</type>
+                </dependency>
+                <dependency>
+                    <groupId>ru.rbt.BarsAgent</groupId>
+                    <artifactId>BarsAgent-war</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <type>war</type>
+                </dependency>
+
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-ear-plugin</artifactId>
+                        <version>2.10.1</version>
+                        <configuration>
+                            <earName>BarsAgent-app-${project.version}</earName>
+                            <defaultLibBundleDir>lib</defaultLibBundleDir>
+                            <archive>
+                                <manifestEntries/>
+                            </archive>
+                            <packagingExcludes/>
+                            <modules>
+                                <jarModule>
+                                    <groupId>ru.rbt.BarsAgent</groupId>
+                                    <artifactId>BarsAgent-common</artifactId>
+                                </jarModule>
+                                <webModule>
+                                    <groupId>ru.rbt.BarsAgent</groupId>
+                                    <artifactId>BarsAgent-war</artifactId>
+                                    <contextRoot>/</contextRoot>
+                                </webModule>
+                            </modules>
+                        </configuration>
+                    </plugin>
+                     <!--изменение persistence.xml-->
+                    <!--<plugin>-->
+                        <!--<groupId>com.google.code.maven-replacer-plugin</groupId>-->
+                        <!--<artifactId>replacer</artifactId>-->
+                        <!--<configuration>-->
+                            <!--<file>${basedir}/src/main/application/META-INF/persistence.xml</file>-->
+                            <!--<outputFile>${project.build.directory}/${project.artifactId}-${project.version}/META-INF/persistence.xml</outputFile>-->
+                            <!--<replacements>-->
+                                <!--<replacement>-->
+                                    <!--<token>#dataSource#</token>-->
+                                    <!--<value></value>-->
+                                    <!--&lt;!&ndash;<value>${data.source}</value>&ndash;&gt;-->
+                                <!--</replacement>-->
+                                <!--<replacement>-->
+                                    <!--<token>#hbm2ddl_type#</token>-->
+                                    <!--<value>update</value>-->
+                                <!--</replacement>-->
+                            <!--</replacements>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

@@ -1,0 +1,42 @@
+package ru.rbt.discount.war.rest;
+
+import org.apache.log4j.Logger;
+import ru.rbt.discount.war.api.Secured;
+import ru.rbt.discount.war.beans.ExecutionBean;
+
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
+import java.net.URLDecoder;
+
+/**
+ * Created by KryukovMV on 06.04.2017.
+ */
+@Path("/exec")
+@Produces("text/plain")
+public class ExecutionRest {
+
+    private static final Logger logger = Logger.getLogger(ExecutionRest.class);
+
+    @Inject
+    private ExecutionBean executionBean;
+
+    @Secured
+    @GET
+    @Path("/{cmd}")
+    public Response exec(@Context SecurityContext sc,
+                         @PathParam("cmd") String cmd,
+                         @QueryParam("q") String q) {
+        if (sc.getUserPrincipal() == null) return Response.status(Response.Status.NO_CONTENT).build();
+        try {
+            cmd = URLDecoder.decode(cmd, "UTF-8");
+            executionBean.exec(cmd);
+            return Response.ok("OK!!!!!!!!!!!!").build();
+        } catch (Exception ex) {
+            return Response.status(Response.Status.NO_CONTENT).build();
+        }
+    }
+
+}

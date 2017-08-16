@@ -1,0 +1,21 @@
+INSERT INTO AU_PERM (ID, ALIAS, NAME) VALUES
+  (1,"view-perms","Просмотр свойства"),
+  (2,"view-attribute","Просмотр атрибута")
+"4dcf6e50-022c-499d-a9b1-ddae9c4247f5";TRUE;"create-resource";"Создание ресурса"
+"4e6bd757-ac1e-4432-a6ff-b061a4af5086";TRUE;"create-project";"Создание проекта"
+"53c3dfbe-2289-40ae-a26a-42f5c99c521c";TRUE;"del-property";"Удаление свойства"
+"56540b29-d014-4dc7-8176-a9320b887f7f";TRUE;"view-key";"Просмотр ключа"
+"7f4038cd-96d6-47a5-b2c6-f2b8e006d0eb";TRUE;"edit-attribute";"Редактирование атрибута"
+"8ba09a17-3603-4ffc-8b03-1632de62843b";TRUE;"edit-key";"Редактирование ключа"
+"8e2d20fe-da43-49b8-aacb-dcb079a31ed4";TRUE;"del-key";"Удаление ключа"
+"96aba69c-e2db-4ebf-a6ef-331d3b419840";TRUE;"del-resource";"Удаление ресурса"
+"9b5e15ab-24e5-4677-b6cf-9e6a8d0ee06b";TRUE;"view-project";"Просмотр проекта"
+"9cabb496-e3de-4a5d-8366-837fd46ece6a";TRUE;"create-property";"Создание свойства"
+"a260234c-0ef6-482f-bbad-d5f5a5e6fc17";TRUE;"edit-project";"Редактирование проекта"
+"a55d98f4-474d-47e7-8390-58f1454c9a52";TRUE;"view-resource";"Просмотр ресурса"
+"ac85b61a-a869-4241-8f4e-307e8eb85f3d";TRUE;"edit-property";"Редактирование свойства"
+"bae0fe2e-d099-4173-b69f-0bbf3796a98b";TRUE;"edit-resource";"Редактирование ресурса"
+"bdb609ce-8e60-497b-9fe1-10a2f820b0eb";TRUE;"create-key";"Создание ключа"
+"bebfa15d-e7a0-474d-8502-a4c60fc8597c";TRUE;"del-project";"Удаление проекта"
+"c5daa8ad-b8da-4674-92b7-5ac24344f48f";TRUE;"del-attribute";"Удаление атрибута"
+"d785db0d-0d55-474b-8ebc-546346b8a625";TRUE;"create-attribute";"Создание атрибута"
