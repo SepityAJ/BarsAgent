@@ -22,8 +22,8 @@ import java.security.Principal;
 @Priority(Priorities.AUTHENTICATION)
 public class SecurityFilter implements ContainerRequestFilter {
 
-    @Inject
-    private SecurityManager securityManager;
+//    @Inject
+//    private SecurityManager securityManager;
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {

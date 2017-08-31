@@ -22,6 +22,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.ws.rs</groupId>-->
+            <!--<artifactId>javax.ws.rs-api</artifactId>-->
+            <!--<version>2.1</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
@@ -84,6 +90,46 @@
                 <configuration>
                     <ejbVersion>3.1</ejbVersion>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>install</phase>
+                        <goals>
+                           <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>c:\develop\Tools\wls12212\wlserver\server\bin\autodeploy</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>c:\IdeaProjects\BarsAgent\BarsAgent-app\target</directory>
+                                    <includes>
+                                        <include>BarsAgent-app-1.0-SNAPSHOT.ear</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <!--<artifactItems>-->
+                                <!--<artifactItem>-->
+                                    <!--<groupId>ru.rbt.BarsAgent</groupId>-->
+                                    <!--<artifactId>BarsAgent-app</artifactId>-->
+                                    <!--<version>1.0-SNAPSHOT</version>-->
+                                    <!--&lt;!&ndash;<type>ear</type>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<outputDirectory>${project.build.directory} </outputDirectory>&ndash;&gt;-->
+                                    <!--<outputDirectory>c:\IdeaProjects\BarsAgent\BarsAgent-app\target\</outputDirectory>-->
+                                    <!--<destFileName>BarsAgent-app-1.0-SNAPSHOT.ear</destFileName>-->
+                                <!--</artifactItem>-->
+                            <!--</artifactItems>-->
+                            <!--<outputDirectory>c:/Java/wls12130_2/user_projects/domains/mydomain/autodeploy/</outputDirectory>-->
+                            <!--<overWriteSnapshots>true</overWriteSnapshots>-->
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <!--<plugin>-->
                 <!--<groupId>org.bsc.maven</groupId>-->
